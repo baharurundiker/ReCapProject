@@ -3,9 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Entities.Concrete
+namespace Entities.DTOs
 {
-    public class Car:IEntity
+    public class CarDetailDto:IDto
     {
         public int Id { get; set; }
         public int BrandId { get; set; }
@@ -13,6 +13,5 @@ namespace Entities.Concrete
         public string ModelYear { get; set; }
         public decimal DailyPrice { get; set; }
         public string Description { get; set; }
-
     }
 }
