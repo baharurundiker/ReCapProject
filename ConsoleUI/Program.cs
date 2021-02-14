@@ -21,13 +21,8 @@ namespace ConsoleUI
             carManager.Add(new Car {Id = 8,BrandId = 2,ColorId = 3,DailyPrice = 10000,Description = "Yedinci Model",
                 ModelYear = "2009"  });
 
+          
 
-        
-        
-        
-        
         }
-
-        
     }
 }

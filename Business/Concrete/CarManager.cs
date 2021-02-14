@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Business.Constants;
+using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System;
@@ -15,57 +17,61 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
-        public void Add(Car car)
+        public IResult Add(Car car)
         {
             if (car.DailyPrice > 0 && car.Description.Length >= 2)
             {
                 _carDal.Add(car);
-                Console.WriteLine(car.Description + "Araba Eklendi");
+                return new SuccessResult(Messages.ProductAdded);
 
             }
             else
             {
-                Console.WriteLine("Arabanız şartlara uygun değil.Lütfen uygun bir araba giriniz.");
+                return new ErrorResult(Messages.ProductNameInvalid);
             }
+           
         }
 
-        public void Delete(Car car)
+        public IResult Delete(Car car)
         {
             _carDal.Delete(car);
-            Console.WriteLine(car.Description + "Araba silindi");
+  
+            return new SuccessResult(Messages.ProductDeleted);
         }
 
-        public List<Car> GetAll()
+        public IDataResult<List<Car>> GetAll()
         {
-            return _carDal.GetAll();
+            return new DataResult<List<Car>>(_carDal.GetAll(),true,"Arabalar listelendi");
         }
+ 
 
-        public Car GetById(int Id)
+        public IDataResult<Car> GetById(int Id)
         {
-            return _carDal.Get(c => c.Id == Id);
+            return new SuccessDataResult<Car>(_carDal.Get(c => c.Id == Id));
         }
 
-        public List<Car> GetCarByBrandId(int brandId)
+        public IDataResult<List<Car>> GetCarByBrandId(int brandId)
         {
-            return _carDal.GetAll(b => b.BrandId == brandId);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(b => b.BrandId == brandId));
         }
 
-        public List<Car> GetCarByColorId(int colorId)
+        public IDataResult<List<Car>> GetCarByColorId(int colorId)
         {
-            return _carDal.GetAll(c => c.ColorId == colorId);
+            return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.ColorId == colorId));
         }
 
-        public void Update(Car car)
+        public IResult Update(Car car)
         {
             if (car.DailyPrice > 0 && car.Description.Length >= 2)
             {
                 _carDal.Update(car);
-                Console.WriteLine("Araba güncellendi");
+                return new SuccessResult(Messages.ProductUpdated);
             }
             else
             {
-                Console.WriteLine("Araba güncellenemedi.Şartlara uyduğunuza emin olunuz.");
+                return new ErrorResult(Messages.ProductNameInvalid);
             }
+           
         }
     }
 }
