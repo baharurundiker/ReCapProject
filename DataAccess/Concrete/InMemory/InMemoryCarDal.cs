@@ -16,12 +16,12 @@ namespace DataAccess.Concrete.InMemory
         {
             _cars = new List<Car>
             {
-                new Car{Id = 1,BrandId = 6 ,ColorId = 5,ModelYear ="2001",DailyPrice = 60000,Description = "Birinci Model"},
-                new Car{Id = 2,BrandId = 1 ,ColorId = 5,ModelYear ="2005",DailyPrice = 50000,Description = "İkinci Model"},
-                new Car{Id = 3,BrandId = 7 ,ColorId = 1,ModelYear ="2010",DailyPrice = 70000,Description = "Üçüncü Model"},
-                new Car{Id = 4,BrandId = 3 ,ColorId = 2,ModelYear ="1995",DailyPrice = 65000,Description = "Dördüncü Model"},
-                new Car{Id = 5,BrandId = 9 ,ColorId = 2,ModelYear ="2017",DailyPrice = 80000,Description = "Beşinci Model"},
-                new Car{Id = 6,BrandId = 7 ,ColorId = 3,ModelYear ="2012",DailyPrice = 64000,Description = "Altıncı Model"}
+                new Car{Id = 1,BrandId = 6 ,ColorId = 5,ModelYear =2001,DailyPrice = 60000,Description = "Birinci Model"},
+                new Car{Id = 2,BrandId = 1 ,ColorId = 5,ModelYear =2005,DailyPrice = 50000,Description = "İkinci Model"},
+                new Car{Id = 3,BrandId = 7 ,ColorId = 1,ModelYear =2010,DailyPrice = 70000,Description = "Üçüncü Model"},
+                new Car{Id = 4,BrandId = 3 ,ColorId = 2,ModelYear =1995,DailyPrice = 65000,Description = "Dördüncü Model"},
+                new Car{Id = 5,BrandId = 9 ,ColorId = 2,ModelYear =2017,DailyPrice = 80000,Description = "Beşinci Model"},
+                new Car{Id = 6,BrandId = 7 ,ColorId = 3,ModelYear =2012,DailyPrice = 64000,Description = "Altıncı Model"}
 
             };
         }
