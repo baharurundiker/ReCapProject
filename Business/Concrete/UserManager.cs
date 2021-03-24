@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Core.Entities;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -38,6 +39,16 @@ namespace Business.Concrete
         public IDataResult<User> GetById(int Id)
         {
             return new SuccessDataResult<User>(_userDal.Get(u => u.Id == Id));
+        }
+
+        public IDataResult<User> GetByMail(string email)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IDataResult<List<OperationClaim>> GetClaims(User user)
+        {
+            throw new NotImplementedException();
         }
 
         public IResult Update(User user)
