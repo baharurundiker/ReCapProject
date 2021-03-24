@@ -23,5 +23,6 @@ namespace Business.Constants
         public static string SuccessfulLogin;
         public static string UserAlreadyExists;
         public static string AccessTokenCreated;
+        public static string CarImageCouldNotBeAdded;
     }
 }
